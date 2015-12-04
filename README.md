@@ -190,8 +190,8 @@ delimited binary protocol buffers or in the simple flat text format
 (both in version 0.0.4, see the
 [data exposition format specification](https://docs.google.com/document/d/1ZjyKiKxZV83VI9ZKAXRGKaUKK2BIWCT7oiGBKDBpjEY/edit?usp=sharing)).
 Discrimination between the two variants is done via the `Content-Type`
-header. (In case of an unknown value for `Content-Type`, the text
-format is tried as a fall-back.)
+header. (Use `application/vnd.google.protobuf` if the messages are
+protobuf encoded, otherwise the text format is tried as a fall-back.)
 
 The response code upon success is always 202 (even if the same
 grouping key has never been used before, i.e. there is no feedback to
